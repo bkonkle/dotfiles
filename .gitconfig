@@ -1,7 +1,0 @@
-[color]
-	ui = auto
-[user]
-	name = bkonkle
-	email = brandon.konkle@gmail.com
-[core]
-	excludesfile = /Users/brandon/.gitignore
