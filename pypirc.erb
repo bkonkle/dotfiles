@@ -1,0 +1,7 @@
+[distutils]
+index-servers =
+    pypi
+
+[pypi]
+username:<%= print("PyPI Username: "); STDOUT.flush; STDIN.gets.chomp %>
+password:<%= print("PyPI Password: "); STDOUT.flush; STDIN.gets.chomp %>
