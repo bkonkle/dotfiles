@@ -5,6 +5,9 @@
 	email = brandon.konkle@gmail.com
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
+	editor = mate -w
+[apply]
+	whitespace = nowarn
 [github]
 	user = bkonkle
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
