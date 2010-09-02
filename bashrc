@@ -103,4 +103,4 @@ export DEVELOP_DIR=$HOME/code/pegasus
 
 export TM_PYCHECKER=pyflakes
 
-export EDITOR=/usr/bin/emacs
+export EDITOR='mate -w'
