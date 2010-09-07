@@ -84,8 +84,8 @@ if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
 fi
 
 # Homebrew python bin
-if [ -d "/usr/local/Cellar/python/2.7/bin/" ]; then
-    export PATH=/usr/local/Cellar/python/2.7/bin/:$PATH
+if [ -d "/usr/local/Cellar/python/2.7/bin" ]; then
+    export PATH=/usr/local/Cellar/python/2.7/bin:$PATH
 fi
 
 # Homebrew perl path
