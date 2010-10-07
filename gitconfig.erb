@@ -1,15 +1,19 @@
+[alias]
+  st = status -sb
+  co = checkout
+  lg = log --oneline --decorate
+[apply]
+	whitespace = nowarn
 [color]
 	ui = auto
-[user]
-	name = bkonkle
-	email = brandon.konkle@gmail.com
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = mate -w
-[apply]
-	whitespace = nowarn
 [github]
 	user = bkonkle
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
-[alias]
-    st = status -sb
+	token = <%= file = File.open("gitapikey", "r"); file.gets %>
+[push]
+  default = tracking
+[user]
+	name = bkonkle
+	email = brandon.konkle@gmail.com
