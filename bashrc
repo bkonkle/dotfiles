@@ -97,6 +97,7 @@ export LANG=en_US.UTF-8
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/code/webapps
 source /usr/local/Cellar/python/2.7/bin/virtualenvwrapper.sh
 
 export DEVELOP_DIR=$HOME/code/pegasus
