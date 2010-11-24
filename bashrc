@@ -1,8 +1,28 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
-# If not running interactively, don't do anything
+# Convenience functions for path manipulation
+path_append()  { path_remove $1; export PATH="$PATH:$1"; }
+path_prepend() { path_remove $1; export PATH="$1:$PATH"; }
+path_remove()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
+
+# Prepend local bin and sbin 
+path_prepend /usr/local/sbin
+path_prepend /usr/local/bin
+
+# Locally installed Ruby gems
+if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
+    path_prepend ${HOME}/.gem/ruby/1.8/bin
+fi
+
+# Homebrew python bin
+if [ -d "/usr/local/Cellar/python/2.7/bin" ]; then
+    path_prepend /usr/local/Cellar/python/2.7/bin
+fi
+
+# Homebrew perl path
+export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
+
+# If not running interactively, don't do anything else
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -76,20 +96,8 @@ fi
 
 # Enable programmable completion features
 if [ -f /usr/local/etc/bash_completion ]; then
-  . /usr/local/etc/bash_completion
+    . /usr/local/etc/bash_completion
 fi
-
-if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
-    export PATH=${HOME}/.gem/ruby/1.8/bin:$PATH
-fi
-
-# Homebrew python bin
-if [ -d "/usr/local/Cellar/python/2.7/bin" ]; then
-    export PATH=/usr/local/Cellar/python/2.7/bin:$PATH
-fi
-
-# Homebrew perl path
-export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
 # Added for Mercurial
 export LC_ALL=en_US.UTF-8
