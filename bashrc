@@ -15,8 +15,8 @@ if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
 fi
 
 # Homebrew python bin
-if [ -d "/usr/local/Cellar/python/2.7/bin" ]; then
-    path_prepend /usr/local/Cellar/python/2.7/bin
+if [ -d "/usr/local/Cellar/python/2.7.1/bin" ]; then
+    path_prepend /usr/local/Cellar/python/2.7.1/bin
 fi
 
 # Homebrew perl path
@@ -106,7 +106,7 @@ export LANG=en_US.UTF-8
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/webapps
-source /usr/local/Cellar/python/2.7/bin/virtualenvwrapper.sh
+source /usr/local/Cellar/python/2.7.1/bin/virtualenvwrapper.sh
 
 export DEVELOP_DIR=$HOME/code/pegasus
 
