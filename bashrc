@@ -113,3 +113,6 @@ export DEVELOP_DIR=$HOME/code/pegasus
 export TM_PYCHECKER=pyflakes
 
 export EDITOR='mate -w'
+
+# Add SSH identity to the authentication agent
+ssh-add
