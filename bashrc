@@ -115,4 +115,4 @@ export TM_PYCHECKER=pyflakes
 export EDITOR='mate -w'
 
 # Add SSH identity to the authentication agent
-ssh-add
+ssh-add &> /dev/null
