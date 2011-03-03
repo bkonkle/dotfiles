@@ -1,5 +1,6 @@
 --type-add=ruby=.haml,.sass
 --type-add=objc=.pch
+--type-set=json=.json
 --type-set=xcode=.pbxproj,.pbxuser,.perspectivev3
 --type-set=ragel=.rl
 --type-set=nib=.xib
