@@ -114,5 +114,7 @@ export TM_PYCHECKER=pyflakes
 
 export EDITOR='mate -w'
 
+export DEPLOY_USER=brandon
+
 # Add SSH identity to the authentication agent
 ssh-add &> /dev/null
