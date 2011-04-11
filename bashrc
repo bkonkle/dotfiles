@@ -108,13 +108,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/webapps
 source /usr/local/Cellar/python/2.7.1/bin/virtualenvwrapper.sh
 
-export DEVELOP_DIR=$HOME/code/pegasus
-
 export TM_PYCHECKER=pyflakes
 
 export EDITOR='mate -w'
 
 export DEPLOY_USER=brandon
+export PROJECT_HOME=~/code
 
 # Add SSH identity to the authentication agent
 ssh-add &> /dev/null
