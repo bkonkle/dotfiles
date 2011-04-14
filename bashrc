@@ -14,9 +14,9 @@ if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
     path_prepend ${HOME}/.gem/ruby/1.8/bin
 fi
 
-# Homebrew python bin
-if [ -d "/usr/local/Cellar/python/2.7.1/bin" ]; then
-    path_prepend /usr/local/Cellar/python/2.7.1/bin
+# Scripts installed by the Homebrew python
+if [ -d "/usr/local/share/python" ]; then
+    path_prepend /usr/local/share/python
 fi
 
 # Homebrew perl path
