@@ -106,7 +106,7 @@ export LANG=en_US.UTF-8
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/webapps
-source /usr/local/Cellar/python/2.7.1/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 export TM_PYCHECKER=pyflakes
 
