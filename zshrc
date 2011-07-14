@@ -1,13 +1,16 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-export ZSH_THEME="robbyrussell"
-
 # Which plugins would you like to load?
 plugins=(git textmate brew git-flow github osx pip ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
+
+# Load a custom theme
+source $HOME/.zsh/theme
+
+# Options
+setopt bang_hist # Enable textual history substitution, using !-syntax.
 
 # Convenience functions for path manipulation
 path_append()  { path_remove $1; export PATH="$PATH:$1"; }
@@ -19,8 +22,8 @@ path_prepend /usr/local/sbin
 path_prepend /usr/local/bin
 
 # Locally installed Ruby gems
-if [ -r "${HOME}/.gem/ruby/1.8/bin" ]; then
-    path_prepend ${HOME}/.gem/ruby/1.8/bin
+if [ -r "$HOME/.gem/ruby/1.8/bin" ]; then
+    path_prepend $HOME/.gem/ruby/1.8/bin
 fi
 
 # Scripts installed by the Homebrew python
@@ -33,15 +36,20 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
 # Local bin
 if [ -d "$HOME/bin" ] ; then
-    path_prepend ${HOME}/bin
+    path_prepend $HOME/bin
 fi
 
 # Aliases
-alias grep='grep --color=auto'
+if [ -f $HOME/.zsh/aliases ]; then
+    source $HOME/.zsh/aliases
+fi
 
-# Mercurial quirks
+# Locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Virtualenv
+VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs

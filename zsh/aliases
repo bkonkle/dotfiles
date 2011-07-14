@@ -1,0 +1,4 @@
+alias grep='grep --color=auto'
+alias feature='git flow feature'
+alias release='git flow release'
+alias hotfix='git flow hotfix'
