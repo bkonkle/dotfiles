@@ -14,7 +14,7 @@ function prompt_chars {
     elif [ $(hg root &> /dev/null) ]; then
         echo '☿'
     elif [[ -d .svn ]]; then
-        echo '>'
+        echo '○'
     else
         echo '$'
     fi
@@ -26,47 +26,42 @@ function git_prompt_status {
   INDEX=$(git status --porcelain 2> /dev/null)
   STATUS=""
   if $(echo "$INDEX" | grep '^?? ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_UNTRACKED$STATUS"
+    STATUS="$fg[red]?$reset_color$STATUS"
   fi
   if $(echo "$INDEX" | grep '^A  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
+    STATUS="$fg[green]A$reset_color$STATUS"
   elif $(echo "$INDEX" | grep '^M  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_ADDED$STATUS"
+    STATUS="$fg[green]M$reset_color$STATUS"
   fi
   if $(echo "$INDEX" | grep '^ M ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$fg[red]M$reset_color$STATUS"
   elif $(echo "$INDEX" | grep '^AM ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$fg[green]A$reset_color$fg[red]M$reset_color$STATUS"
   elif $(echo "$INDEX" | grep '^ T ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_MODIFIED$STATUS"
+    STATUS="$fg[red]T$reset_color$STATUS"
   fi
   if $(echo "$INDEX" | grep '^R  ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_RENAMED$STATUS"
+    STATUS="$fg[green]R$reset_color$STATUS"
   fi
   if $(echo "$INDEX" | grep '^ D ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
+    STATUS="$fg[red]D$reset_color$STATUS"
   elif $(echo "$INDEX" | grep '^AD ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_DELETED$STATUS"
+    STATUS="$fg[green]A$reset_color$fg[red]D$reset_color$STATUS"
   fi
   if $(echo "$INDEX" | grep '^UU ' &> /dev/null); then
-    STATUS="$ZSH_THEME_GIT_PROMPT_UNMERGED$STATUS"
+    STATUS="$fg[red]U$reset_color$STATUS"
   fi
-  echo $STATUS
+  if [ -n "$STATUS" ]; then
+    echo "[$STATUS]"
+  fi
 }
 
 PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}%{$(collapse_pwd)%}%{$reset_color%} $(virtualenv_info)$(git_prompt_info)$(git_prompt_status)
+%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}%{$(collapse_pwd)%}%{$reset_color%} $(virtualenv_info)$(git_prompt_info)$(git_prompt_status)$(git_prompt_ahead)
 $(prompt_chars) '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="branch $fg[cyan]"
 ZSH_THEME_GIT_PROMPT_SUFFIX="$reset_color"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-# git prompt status
-ZSH_THEME_GIT_PROMPT_UNTRACKED=":$fg[green]?$reset_color"
-ZSH_THEME_GIT_PROMPT_ADDED=":$fg[green]∆$reset_color"
-ZSH_THEME_GIT_PROMPT_MODIFIED=":$fg[red]∂$reset_color"
-ZSH_THEME_GIT_PROMPT_RENAMED=":$fg[green]≈$reset_color"
-ZSH_THEME_GIT_PROMPT_DELETED=":$fg[red]-$reset_color"
-ZSH_THEME_GIT_PROMPT_UNMERGED=":$fg[red]!$reset_color"
+ZSH_THEME_GIT_PROMPT_AHEAD=" ($fg[green]ahead$reset_color)"
