@@ -62,3 +62,6 @@ export EDITOR='mate -w'
 export DEPLOY_USER=brandon
 export PROJECT_HOME=~/code
 
+# python-novaclient
+export NOVA_USERNAME=<%= print("Rackspace username: "); STDOUT.flush; STDIN.gets.chomp %>
+export NOVA_API_KEY=<%= print("Rackspace API key: "); STDOUT.flush; STDIN.gets.chomp %>

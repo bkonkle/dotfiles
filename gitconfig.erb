@@ -11,7 +11,7 @@
 	editor = mate -w
 [github]
 	user = bkonkle
-	token = <%= file = File.open("gitapikey", "r"); file.gets %>
+	token = <%= print("Github API key: "); STDOUT.flush; STDIN.gets.chomp %>
 [push]
   default = tracking
 [user]
