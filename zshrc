@@ -1,13 +1,12 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
+export ZSH_THEME="bkonkle"
+
 # Which plugins would you like to load?
-plugins=(git textmate brew git-flow github osx pip ssh-agent)
+plugins=(git svn command-coloring fabric textmate brew git-flow github osx pip ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
-
-# Load a custom theme
-source $HOME/.zsh/theme
 
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
@@ -40,8 +39,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # Aliases
-if [ -f $HOME/.zsh/aliases ]; then
-    source $HOME/.zsh/aliases
+if [ -f $HOME/.zsh_aliases ]; then
+    source $HOME/.zsh_aliases
 fi
 
 # Locales
