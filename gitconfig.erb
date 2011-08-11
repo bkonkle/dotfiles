@@ -11,7 +11,7 @@
 	editor = mate -w
 [github]
 	user = bkonkle
-	token = <%= print("Github API key: "); STDOUT.flush; STDIN.gets.chomp %>
+	token = <%= @github %>
 [push]
   default = tracking
 [user]

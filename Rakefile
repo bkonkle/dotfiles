@@ -1,5 +1,6 @@
 require 'rake'
 require 'erb'
+require 'apikeys' if File.exists?('apikeys.rb')
 
 desc "install the dot files into user's home directory"
 task :install do
