@@ -11,9 +11,9 @@
 	editor = mate -w
 [github]
 	user = bkonkle
-	token = <%= file = File.open("gitapikey", "r"); file.gets %>
+	token = <%= @github %>
 [push]
   default = tracking
 [user]
 	name = bkonkle
-	email = brandon@brandonkonkle.com
+	email = brandon@konkle.us
