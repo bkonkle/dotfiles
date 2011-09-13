@@ -8,7 +8,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # Git aliases
-alias git=hub
 alias feature='git flow feature'
 alias release='git flow release'
 alias hotfix='git flow hotfix'

@@ -106,7 +106,7 @@ export LANG=en_US.UTF-8
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code/webapps
-source /usr/local/share/python/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
 
 export TM_PYCHECKER=pyflakes
 
@@ -117,3 +117,6 @@ export PROJECT_HOME=~/code
 
 # Add SSH identity to the authentication agent
 ssh-add &> /dev/null
+
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_RESPECT_VIRTUALENV=true
