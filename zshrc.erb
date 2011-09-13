@@ -70,3 +70,10 @@ export NOVA_API_KEY=<%= @rackspace %>
 
 # node.js
 export NODE_PATH=/usr/local/lib/node_modules
+
+# Disable global packages in pip
+export PIP_RESPECT_VIRTUALENV=true
+export PIP_REQUIRE_VIRTUALENV=true
+
+# Misc development variables
+export DEVELDIR=~/code/cmg
