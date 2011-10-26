@@ -1,5 +1,6 @@
 --type-add=ruby=.haml,.sass
 --type-add=objc=.pch
+--type-set=less=.less
 --type-set=json=.json
 --type-set=xcode=.pbxproj,.pbxuser,.perspectivev3
 --type-set=ragel=.rl
