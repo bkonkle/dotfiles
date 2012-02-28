@@ -18,7 +18,7 @@ path_append()  { path_remove $1; export PATH="$PATH:$1"; }
 path_prepend() { path_remove $1; export PATH="$1:$PATH"; }
 path_remove()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
 
-# Prepend local bin and sbin 
+# Prepend local bin and sbin
 path_prepend /usr/local/sbin
 path_prepend /usr/local/bin
 
@@ -59,7 +59,7 @@ source /usr/local/share/python/virtualenvwrapper.sh
 
 export TM_PYCHECKER=pyflakes
 
-export EDITOR='mate -w'
+export EDITOR='subl -w'
 
 export DEPLOY_USER=brandon
 export PROJECT_HOME=~/code
