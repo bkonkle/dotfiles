@@ -32,6 +32,11 @@ if [ -d "/usr/local/share/python" ]; then
     path_prepend /usr/local/share/python
 fi
 
+# Packages installed by NPM
+if [ -d "/usr/local/lib/node_modules" ]; then
+    path_prepend /usr/local/lib/node_modules
+fi
+
 # Homebrew perl path
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
