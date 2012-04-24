@@ -3,3 +3,7 @@ alias feature='git flow feature'
 alias release='git flow release'
 alias hotfix='git flow hotfix'
 alias fab='nocorrect fab'
+
+# Django Aliases
+alias dj='manage.py'
+alias djr='manage.py runserver 0.0.0.0:8000'
