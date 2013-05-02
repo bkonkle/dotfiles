@@ -38,8 +38,8 @@ if [ -d "/usr/local/share/python" ]; then
 fi
 
 # Packages installed by NPM
-if [ -d "/usr/local/lib/node_modules" ]; then
-    path_prepend /usr/local/lib/node_modules
+if [ -d "/usr/local/share/npm/bin" ]; then
+    path_prepend /usr/local/share/npm/bin
 fi
 
 # Homebrew perl path
