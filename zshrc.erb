@@ -27,24 +27,6 @@ path_remove()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"
 path_prepend /usr/local/sbin
 path_prepend /usr/local/bin
 
-# Locally installed Ruby gems
-if [ -r "$HOME/.gem/ruby/1.8/bin" ]; then
-    path_prepend $HOME/.gem/ruby/1.8/bin
-fi
-
-# Scripts installed by the Homebrew python
-if [ -d "/usr/local/share/python" ]; then
-    path_prepend /usr/local/share/python
-fi
-
-# Packages installed by NPM
-if [ -d "/usr/local/share/npm/bin" ]; then
-    path_prepend /usr/local/share/npm/bin
-fi
-
-# Homebrew perl path
-export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
-
 # Local bin
 if [ -d "$HOME/bin" ] ; then
     path_prepend $HOME/bin
@@ -54,29 +36,56 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+export EDITOR='subl -w'
+
+
+# ----
+# Perl
+# ----
+
+# Homebrew perl path
+export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
+
+
+# ----
+# Ruby
+# ----
+
+# rbenv (https://github.com/sstephenson/rbenv)
+if [ -d "$HOME/.rbenv/bin" ]; then
+    path_prepend $HOME/.rbenv/bin
+fi
+
+
+# -------
+# Node.js
+# -------
+
+export NODE_PATH=/usr/local/lib/node_modules
+
+# Scripts installed by NPM
+if [ -d "/usr/local/share/npm/bin" ]; then
+    path_prepend /usr/local/share/npm/bin
+fi
+
+
+# ------
+# Python
+# ------
+
+# Scripts installed by the Homebrew python
+if [ -d "/usr/local/share/python" ]; then
+    path_prepend /usr/local/share/python
+fi
+
 # Virtualenv
 VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/code/webapps
+export PROJECT_HOME=$HOME/code
 source /usr/local/share/python/virtualenvwrapper.sh
-
-export EDITOR='subl -w'
-
-export DEPLOY_USER=brandon
-export PROJECT_HOME=~/code
-
-# python-novaclient
-export NOVA_USERNAME=bkonkle
-export NOVA_API_KEY=<%= @rackspace %>
-
-# node.js
-export NODE_PATH=/usr/local/lib/node_modules
 
 # Disable global packages in pip
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUALENV=true
-
-# Misc development variables
-export DEVELDIR=~/code/cmg
