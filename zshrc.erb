@@ -52,7 +52,7 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # ----
 
 # rbenv (https://github.com/sstephenson/rbenv)
-if [ -d "$HOME/.rbenv/bin" ]; then
+if [ -d "$HOME/.rbenv/shims" ]; then
     path_prepend $HOME/.rbenv/shims
 fi
 
