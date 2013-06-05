@@ -1,13 +1,13 @@
 require 'rake'
 require 'erb'
-require 'apikeys' if File.exists?('apikeys.rb')
+load 'apikeys.rb'
 
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.md LICENSE zsh_notes.md].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"
