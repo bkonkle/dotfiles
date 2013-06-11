@@ -13,6 +13,9 @@ fi
 # Which plugins would you like to load?
 plugins=(command-coloring brew django fabric git-extras git-flow git-remote-branch git github gpg-agent osx pip python ssh-agent svn terminalapp)
 
+# Plugin settings
+zstyle :omz:plugins:ssh-agent identities id_rsa heroku-ll heroku-personal
+
 source $ZSH/oh-my-zsh.sh
 
 # Options
@@ -37,9 +40,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export EDITOR='subl -w'
-
-zstyle :omz:plugins:ssh-agent agent-forwarding on
-zstyle :omz:plugins:ssh-agent id_rsa heroku-ll heroku-personal
 
 
 # ----
