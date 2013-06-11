@@ -11,7 +11,32 @@ if [ -f $HOME/.zsh_aliases ]; then
 fi
 
 # Which plugins would you like to load?
-plugins=(command-coloring brew django fabric git-extras git-flow git-remote-branch git github gpg-agent osx pip python ssh-agent svn terminalapp)
+plugins=(
+  command-coloring
+  bower
+  brew
+  cloudapp
+  django
+  fabric
+  gem
+  git
+  git-flow
+  git-remote-branch
+  github
+  golang
+  gpg-agent
+  heroku
+  npm
+  osx
+  pip
+  python
+  rbenv
+  redis-cli
+  ssh-agent
+  sublime
+  svn
+  terminalapp
+)
 
 # Plugin settings
 zstyle :omz:plugins:ssh-agent identities id_rsa heroku-ll heroku-personal
@@ -48,16 +73,6 @@ export EDITOR='subl -w'
 
 # Homebrew perl path
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
-
-
-# ----
-# Ruby
-# ----
-
-# rbenv (https://github.com/sstephenson/rbenv)
-if [ -d "$HOME/.rbenv/shims" ]; then
-    path_prepend $HOME/.rbenv/shims
-fi
 
 
 # -------
