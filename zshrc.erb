@@ -75,6 +75,16 @@ export EDITOR='subl -w'
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
 
+# ----
+# Ruby
+# ----
+
+# Initialize rbenv
+if [ -f "/usr/local/bin/rbenv" ]; then
+    eval "$(rbenv init -)"
+fi
+
+
 # -------
 # Node.js
 # -------
