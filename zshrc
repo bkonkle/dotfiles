@@ -88,15 +88,11 @@ fi
 
 export NODE_PATH=/usr/local/lib/node_modules
 
-# Scripts installed by NPM
-if [ -d "/usr/local/share/npm/bin" ]; then
-    path_prepend /usr/local/share/npm/bin
-fi
-
-
 # ------
 # Python
 # ------
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Virtualenv
 VIRTUAL_ENV_DISABLE_PROMPT=true
@@ -104,7 +100,7 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
-source /usr/local/bin/virtualenvwrapper.sh
+pyenv virtualenvwrapper
 
 # Disable global packages in pip
 export PIP_RESPECT_VIRTUALENV=true
