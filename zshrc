@@ -43,33 +43,7 @@ source $ZSH/oh-my-zsh.sh
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
 
-# Convenience functions for path manipulation
-path_append()  { path_remove $1; export PATH="$PATH:$1"; }
-path_prepend() { path_remove $1; export PATH="$1:$PATH"; }
-path_remove()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
-
-# Prepend local bin and sbin
-path_prepend /usr/local/sbin
-path_prepend /usr/local/bin
-
-# Local bin
-if [ -d "$HOME/bin" ] ; then
-    path_prepend $HOME/bin
-fi
-
-# Locales
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 export EDITOR='subl -w'
-
-
-# ----
-# Perl
-# ----
-
-# Homebrew perl path
-export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
 
 # ----
@@ -82,17 +56,9 @@ if [ -f "/usr/local/bin/rbenv" ]; then
 fi
 
 
-# -------
-# Node.js
-# -------
-
-export NODE_PATH=/usr/local/lib/node_modules
-
 # ------
 # Python
 # ------
-
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Virtualenv
 VIRTUAL_ENV_DISABLE_PROMPT=true
@@ -100,7 +66,6 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
-pyenv virtualenvwrapper
 
 # Disable global packages in pip
 export PIP_RESPECT_VIRTUALENV=true
