@@ -1,4 +1,10 @@
-# ----------
+# ZSH Environment Configuration
+# =============================
+#
+# This file is sourced for all shells, whether interactive or not. It's the
+# best place to set up path details, so that tools like Sublime Text can find
+# things.
+
 # Path setup
 # ----------
 
@@ -21,7 +27,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 
-# ----
 # Perl
 # ----
 
@@ -29,7 +34,6 @@ export LANG=en_US.UTF-8
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 
 
-# -------
 # Node.js
 # -------
 

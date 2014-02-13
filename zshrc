@@ -1,14 +1,19 @@
+# ZSH Interactive Shell Configuration
+# ===================================
+#
+# This file is sourced for all interactive shells. It's the best place to set
+# up details that wouldn't be useful to software accessing the shell
+# programatically.
+
+# Oh My ZSH
+#-----------
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
 
 # Set name of the theme to load.
 export ZSH_THEME="bkonkle"
-
-# Aliases
-if [ -f $HOME/.zsh_aliases ]; then
-    source $HOME/.zsh_aliases
-fi
 
 # Which plugins would you like to load?
 plugins=(
@@ -46,7 +51,16 @@ setopt bang_hist # Enable textual history substitution, using !-syntax.
 export EDITOR='subl -w'
 
 
-# ----
+# Aliases
+# -------
+
+alias grep='grep --color=auto'
+alias feature='git flow feature'
+alias release='git flow release'
+alias hotfix='git flow hotfix'
+alias fab='nocorrect fab'
+
+
 # Ruby
 # ----
 
@@ -56,7 +70,6 @@ if [ -f "/usr/local/bin/rbenv" ]; then
 fi
 
 
-# ------
 # Python
 # ------
 
@@ -66,6 +79,7 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Disable global packages in pip
 export PIP_RESPECT_VIRTUALENV=true
