@@ -38,3 +38,11 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # -------
 
 export NODE_PATH=/usr/local/lib/node_modules
+
+
+# Ruby
+# ----
+
+if [ -d "/usr/local/opt/ruby/bin" ]; then
+    path_prepend /usr/local/opt/ruby/bin
+fi

@@ -61,15 +61,6 @@ alias hotfix='git flow hotfix'
 alias fab='nocorrect fab'
 
 
-# Ruby
-# ----
-
-# Initialize rbenv
-if [ -f "/usr/local/bin/rbenv" ]; then
-    eval "$(rbenv init -)"
-fi
-
-
 # Python
 # ------
 
