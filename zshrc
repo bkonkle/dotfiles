@@ -59,7 +59,7 @@ alias feature='git flow feature'
 alias release='git flow release'
 alias hotfix='git flow hotfix'
 alias fab='nocorrect fab'
-alias gulp='node --harmony `which gulp`'
+alias gulph='node --harmony `which gulp`'
 
 
 # Python
