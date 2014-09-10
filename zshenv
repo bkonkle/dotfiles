@@ -46,3 +46,9 @@ export NODE_ENV=development
 if [ -d "/usr/local/opt/ruby/bin" ]; then
     path_prepend /usr/local/opt/ruby/bin
 fi
+
+
+# Java
+# ----
+
+export JAVA_HOME=$(/usr/libexec/java_home)
