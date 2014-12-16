@@ -1,0 +1,17 @@
+'global':
+  'editor':
+    'fontSize': 12
+    'tabLength': 4
+    'invisibles': {}
+  'core':
+    'projectHome': '~/code'
+    'themes': [
+      'seti-ui'
+      'seti-syntax'
+    ]
+  'exception-reporting':
+    'userId': 'c3e1c602-cb5f-9f34-f768-c2cb60e6b776'
+  'welcome':
+    'showOnStartup': false
+  'tree-view':
+    'hideIgnoredNames': true
