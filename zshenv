@@ -50,6 +50,8 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
     path_prepend /usr/local/opt/ruby/bin
 fi
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Java
 # ----
 
