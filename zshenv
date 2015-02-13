@@ -26,13 +26,11 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
 # Perl
 # ----
 
 # Homebrew perl path
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
-
 
 # Node.js
 # -------
@@ -47,8 +45,8 @@ if [ -d "/usr/local/opt/ruby/bin" ]; then
     path_prepend /usr/local/opt/ruby/bin
 fi
 
-
 # Java
 # ----
 
 export JAVA_HOME=$(/usr/libexec/java_home)
+export CATALINA_HOME=/usr/local/opt/tomcat/libexec
