@@ -1,9 +1,9 @@
 # ZSH Environment Configuration
 # =============================
 #
-# This file is sourced for all shells, whether interactive or not. It's the
-# best place to set up path details, so that tools like Sublime Text can find
-# things.
+# This file is sourced for all login shells, whether interactive or not. It's
+# the best place to set up path details, so that tools like Sublime Text can
+# find things.
 
 # Path setup
 # ----------
