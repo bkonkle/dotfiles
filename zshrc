@@ -72,7 +72,3 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 source /usr/local/bin/virtualenvwrapper.sh
-
-# Disable global packages in pip
-export PIP_RESPECT_VIRTUALENV=true
-export PIP_REQUIRE_VIRTUALENV=true
