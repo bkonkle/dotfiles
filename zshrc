@@ -76,3 +76,9 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Disable global packages in pip
 export PIP_RESPECT_VIRTUALENV=true
 export PIP_REQUIRE_VIRTUALENV=true
+
+
+# Fun
+# ---
+
+fortune | cowsay | lolcat
