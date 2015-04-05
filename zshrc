@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
 
-export EDITOR='subl -w'
+export EDITOR='atom -w'
 
 
 # Aliases
