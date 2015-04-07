@@ -77,4 +77,4 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Fun
 # ---
 
-fortune | cowsay | lolcat
+t timeline -d -n1 | cowsay | lolcat
