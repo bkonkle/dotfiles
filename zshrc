@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # ZSH Interactive Shell Configuration
 # ===================================
 #
@@ -43,7 +45,7 @@ plugins=(
 # Plugin settings
 zstyle :omz:plugins:ssh-agent identities id_rsa heroku-ll heroku-personal
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
@@ -66,12 +68,12 @@ alias gulph='node --harmony `which gulp`'
 # ------
 
 # Virtualenv
-VIRTUAL_ENV_DISABLE_PROMPT=true
+export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
-source /usr/local/bin/virtualenvwrapper.sh
+pyenv virtualenvwrapper
 
 
 # Fun
