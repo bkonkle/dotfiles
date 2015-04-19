@@ -3,17 +3,17 @@
   co = checkout
   lg = log --oneline --decorate
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [color]
-	ui = auto
+  ui = auto
 [core]
-	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	editor = atom -w
+  excludesfile = <%= ENV['HOME'] %>/.gitignore
+  editor = atom -w
 [github]
-	user = bkonkle
-	token = <%= @github %>
+  user = bkonkle
+  token = <%= @github %>
 [push]
   default = tracking
 [user]
-	name = bkonkle
-	email = brandon@konkle.us
+  name = bkonkle
+  email = brandon@konkle.us
