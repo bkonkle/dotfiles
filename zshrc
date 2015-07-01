@@ -19,10 +19,8 @@ export ZSH_THEME="bkonkle"
 
 # Which plugins would you like to load?
 plugins=(
+  atom
   brew
-  cloudapp
-  django
-  fabric
   gem
   git
   git-flow
@@ -33,11 +31,8 @@ plugins=(
   heroku
   npm
   osx
-  pip
-  python
   redis-cli
   ssh-agent
-  sublime
   svn
   terminalapp
 )
@@ -60,8 +55,7 @@ alias grep='grep --color=auto'
 alias feature='git flow feature'
 alias release='git flow release'
 alias hotfix='git flow hotfix'
-alias fab='nocorrect fab'
-alias gulph='node --harmony `which gulp`'
+alias bgulp='babel-node $(which gulp)'
 
 
 # Python
@@ -74,9 +68,3 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
 pyenv virtualenvwrapper
-
-
-# Fun
-# ---
-
-t timeline -d -n1 | cowsay | lolcat
