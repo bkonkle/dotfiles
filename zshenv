@@ -62,6 +62,3 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 export CATALINA_HOME=/usr/local/opt/tomcat/libexec
-
-# Export path to launchd
-echo "setenv PATH $PATH" > /etc/launchd.conf
