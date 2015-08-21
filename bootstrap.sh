@@ -24,14 +24,6 @@ if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"
 fi
 
-case "$SHELL" in
-  */zsh) : ;;
-  *)
-    fancy_echo "Changing your shell to zsh ..."
-    chsh -s "$(which zsh)"
-    ;;
-esac
-
 brew_install_or_upgrade() {
   if brew_is_installed "$1"; then
     if brew_is_upgradable "$1"; then
@@ -109,6 +101,7 @@ fancy_echo "Updating Homebrew formulas ..."
 brew update
 
 brew_install_or_upgrade 'zsh'
+brew_install_or_upgrade 'zsh-completions'
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'rbenv'
@@ -126,6 +119,14 @@ brew_install_or_upgrade 'keybase'
 brew_install_or_upgrade 'gnupg'
 brew_install_or_upgrade 'shellcheck'
 brew_install_or_upgrade 'wget'
+
+case "$SHELL" in
+  */zsh) : ;;
+  *)
+    fancy_echo "Changing your shell to zsh ..."
+    chsh -s "$(brew --prefix)/bin/zsh"
+    ;;
+esac
 
 if [ ! -d "$HOME/.oh-my-zsh/" ]; then
   fancy_echo "Installing Oh My Zsh ..."

@@ -47,6 +47,11 @@ setopt bang_hist # Enable textual history substitution, using !-syntax.
 
 export EDITOR='atom -w'
 
+# Online help for brew-installed zsh
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
 
 # Aliases
 # -------
