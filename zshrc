@@ -38,7 +38,7 @@ plugins=(
 )
 
 # Plugin settings
-zstyle :omz:plugins:ssh-agent identities id_rsa heroku-ll heroku-personal
+zstyle :omz:plugins:ssh-agent identities id_rsa heroku-personal
 
 source "$ZSH/oh-my-zsh.sh"
 
