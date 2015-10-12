@@ -4,8 +4,8 @@
 # environment. It was adapted from https://github.com/thoughtbot/laptop.
 # Thanks for sharing, thoughtbot!
 
-NODE_VERSION="iojs-v3"
-RUBY_VERSION="2.2.2"
+NODE_VERSION="v4"
+RUBY_VERSION="1.9.3-p448"
 PYTHON_VERSION="3.4.3"
 
 fancy_echo() {
@@ -104,7 +104,6 @@ brew_install_or_upgrade 'zsh'
 brew_install_or_upgrade 'zsh-completions'
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'nvm'
-brew_install_or_upgrade 'rbenv'
 brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'pyenv'
 brew_install_or_upgrade 'pyenv-virtualenv'
@@ -145,14 +144,14 @@ nvm install "$NODE_VERSION"
 
 fancy_echo "Istalling Ruby ..."
 
-eval "$(rbenv init - zsh)"
+curl -L get.rvm.io | bash
 
-if ! rbenv versions | grep -Fq "$RUBY_VERSION"; then
-  rbenv install -s "$RUBY_VERSION"
+if ! rvm list | grep -Fq "$RUBY_VERSION"; then
+  rvm install "$RUBY_VERSION"
 fi
 
-rbenv global "$RUBY_VERSION"
-rbenv shell "$RUBY_VERSION"
+# rbenv global "$RUBY_VERSION"
+# rbenv shell "$RUBY_VERSION"
 
 gem update --system
 
