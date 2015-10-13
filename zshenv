@@ -51,8 +51,8 @@ source $(brew --prefix nvm)/nvm.sh
 # Ruby
 # ----
 
-source /Users/brandon/.rvm/scripts/rvm
 path_prepend $HOME/.rvm/bin
+source /Users/brandon/.rvm/scripts/rvm
 
 # Java
 # ----
