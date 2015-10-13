@@ -52,7 +52,6 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
 
-
 # Aliases
 # -------
 
@@ -61,7 +60,7 @@ alias feature='git flow feature'
 alias release='git flow release'
 alias hotfix='git flow hotfix'
 alias bgulp='babel-node $(which gulp)'
-
+alias runpg='postgres -D /usr/local/var/postgres'
 
 # Python
 # ------
