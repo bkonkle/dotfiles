@@ -61,7 +61,7 @@ alias release='git flow release'
 alias hotfix='git flow hotfix'
 alias bgulp='babel-node $(which gulp)'
 alias runpg='postgres -D /usr/local/var/postgres'
-alias syncievms='IEVMS_VERSIONS="10 11 Edge" ievms'
+alias syncievms='IEVMS_VERSIONS="10 11 EDGE" ievms'
 
 # Python
 # ------
