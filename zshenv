@@ -41,7 +41,6 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 export NODE_PATH=/usr/local/lib/node_modules
 export NODE_ENV=development
 export NVM_DIR=~/.nvm
-export NODE_REPL_HISTORY_FILE=~/.node_repl_history
 source $(brew --prefix nvm)/nvm.sh
 
 # Ruby
