@@ -72,4 +72,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/code
-pyenv virtualenvwrapper
+
+if which virtualenvwrapper.sh > /dev/null; then
+  source /usr/local/bin/virtualenvwrapper.sh
+fi

@@ -28,10 +28,6 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Python
-# ------
-
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Perl
 # ----

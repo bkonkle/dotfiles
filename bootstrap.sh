@@ -6,7 +6,6 @@
 
 NODE_VERSION="v4"
 RUBY_VERSION="1.9.3-p448"
-PYTHON_VERSION="3.4.3"
 
 fancy_echo() {
   local fmt="$1"; shift
@@ -105,9 +104,7 @@ brew_install_or_upgrade 'zsh-completions'
 brew_install_or_upgrade 'git'
 brew_install_or_upgrade 'nvm'
 brew_install_or_upgrade 'ruby-build'
-brew_install_or_upgrade 'pyenv'
-brew_install_or_upgrade 'pyenv-virtualenv'
-brew_install_or_upgrade 'pyenv-virtualenvwrapper'
+brew_install_or_upgrade 'python'
 
 brew_install_or_upgrade 'openssl'
 brew unlink openssl && brew link openssl --force
@@ -160,14 +157,6 @@ gem_install_or_update 'bundler'
 fancy_echo "Configuring Bundler ..."
   number_of_cores=$(sysctl -n hw.ncpu)
   bundle config --global jobs $((number_of_cores - 1))
-
-fancy_echo "Installing Python ..."
-
-eval "$(pyenv init - zsh)"
-
-if ! pyenv versions | grep -Fq "$PYTHON_VERSION"; then
-  pyenv install -s "$PYTHON_VERSION"
-fi
 
 fancy_echo "Installing GUI apps ..."
 
