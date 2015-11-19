@@ -4,7 +4,7 @@
 # environment. It was adapted from https://github.com/thoughtbot/laptop.
 # Thanks for sharing, thoughtbot!
 
-NODE_VERSION="v4"
+NODE_VERSION="v5"
 RUBY_VERSION="1.9.3-p448"
 
 fancy_echo() {
@@ -132,7 +132,7 @@ else
   sh ~/.oh-my-zsh/tools/upgrade.sh
 fi
 
-fancy_echo "Installing io.js ..."
+fancy_echo "Installing node ..."
 
 export NVM_DIR=~/.nvm
 . "$(brew --prefix nvm)"/nvm.sh
