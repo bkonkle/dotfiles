@@ -76,3 +76,6 @@ export PROJECT_HOME=$HOME/code
 if which virtualenvwrapper.sh > /dev/null; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+source /Users/brandon/.npm-run.plugin.zsh/npm-run.plugin.zsh
