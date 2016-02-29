@@ -78,4 +78,4 @@ if which virtualenvwrapper.sh > /dev/null; then
 fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-source /Users/brandon/.npm-run.plugin.zsh/npm-run.plugin.zsh
+source $HOME/.npm-run.plugin.zsh/npm-run.plugin.zsh
