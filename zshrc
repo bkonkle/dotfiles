@@ -23,7 +23,6 @@ plugins=(
   brew
   gem
   git
-  git-flow
   git-remote-branch
   github
   golang
@@ -56,12 +55,7 @@ HELPDIR=/usr/local/share/zsh/help
 # -------
 
 alias grep='grep --color=auto'
-alias feature='git flow feature'
-alias release='git flow release'
-alias hotfix='git flow hotfix'
-alias bgulp='babel-node $(which gulp)'
 alias runpg='postgres -D /usr/local/var/postgres'
-alias syncievms='IEVMS_VERSIONS="10 11 EDGE" ievms'
 
 # Python
 # ------

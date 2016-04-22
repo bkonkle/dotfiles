@@ -28,7 +28,6 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
 # Perl
 # ----
 
@@ -41,12 +40,6 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 export NODE_ENV=development
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-# Ruby
-# ----
-
-path_prepend $HOME/.rvm/bin
-source /Users/brandon/.rvm/scripts/rvm
 
 # Java
 # ----
