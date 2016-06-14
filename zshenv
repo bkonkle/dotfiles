@@ -41,6 +41,8 @@ export NODE_ENV=development
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+path_prepend node_modules/.bin
+
 # Java
 # ----
 
