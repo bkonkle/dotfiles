@@ -56,6 +56,7 @@ HELPDIR=/usr/local/share/zsh/help
 
 alias grep='grep --color=auto'
 alias runpg='postgres -D /usr/local/var/postgres'
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Python
 # ------
