@@ -38,7 +38,7 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # -------
 
 export NODE_ENV=development
-export NVM_DIR=~/.nvm
+export NVM_DIR=$HOME/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Java
@@ -46,3 +46,4 @@ source $(brew --prefix nvm)/nvm.sh
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 export CATALINA_HOME=/usr/local/opt/tomcat/libexec
+export ANDROID_HOME=$HOME/Library/Android/sdk
