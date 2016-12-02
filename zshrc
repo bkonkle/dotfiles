@@ -7,39 +7,44 @@
 # up details that wouldn't be useful to software accessing the shell
 # programatically.
 
+# Antigen ZSH package manager
+source $(brew --prefix)/share/antigen/antigen.zsh
+
 # Oh My ZSH
-#-----------
+antigen use oh-my-zsh
 
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=$HOME/.dotfiles/zsh_custom
+# Plugins
+antigen bundles <<BUNDLES
+atom
+command-not-found
+colored-man-pages
+brew
+gem
+git
+git-remote-branch
+github
+golang
+gpg-agent
+heroku
+npm
+osx
+redis-cli
+ssh-agent
 
-# Set name of the theme to load.
-export ZSH_THEME="bkonkle"
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
 
-# Which plugins would you like to load?
-plugins=(
-  atom
-  brew
-  gem
-  git
-  git-remote-branch
-  github
-  golang
-  gpg-agent
-  heroku
-  npm
-  osx
-  redis-cli
-  ssh-agent
-  svn
-  terminalapp
-)
+tylerreckart/hyperzsh
+BUNDLES
+
+antigen theme tylerreckart/hyperzsh hyperzsh
+
+antigen apply
 
 # Plugin settings
 zstyle :omz:plugins:ssh-agent identities id_rsa heroku-personal
-
-source "$ZSH/oh-my-zsh.sh"
 
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
@@ -79,3 +84,4 @@ source $HOME/.npm-run.plugin.zsh/npm-run.plugin.zsh
 # ------------
 source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /Users/brandon/.npm-run.plugin.zsh/npm-run.plugin.zsh
