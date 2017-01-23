@@ -38,8 +38,6 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # -------
 
 export NODE_ENV=development
-export NVM_DIR=$HOME/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 # Java
 # ----
