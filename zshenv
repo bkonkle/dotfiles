@@ -38,6 +38,7 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # -------
 
 export NODE_ENV=development
+path_append `yarn global bin`
 
 # Java
 # ----
