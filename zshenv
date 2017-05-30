@@ -28,9 +28,6 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# Max open files
-ulimit -n 65536 65536
-
 # Perl
 # ----
 
