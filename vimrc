@@ -2,8 +2,10 @@
 "" Brandon's .vimrc
 ""
 
-if has('vim_starting') && !has('nvim') && &compatible
-  set nocompatible                " Be iMproved
+if has('vim_starting')
+   if &compatible
+     set nocompatible               " Be iMproved
+   endif
 endif
 
 set number                        " Line numbers
@@ -45,8 +47,11 @@ set smartcase   " ... unless they contain at least one capital letter
 "" Backup and Swap files
 ""
 
-set backupdir^=~/.vim/_backup//
-set directory^=~/.vim/_temp//
+set noswapfile            " Don't make backups.
+set nowritebackup         " Even if you did make a backup, don't keep it around.
+set nobackup
+
+set virtualedit=block     " Allow virtual editing in Visual block mode.
 set term=screen-256color
 
 ""
@@ -71,6 +76,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'sbdchd/neoformat'
 Plug 'pangloss/vim-javascript'
+
+" Colors
+
+Plug 'jordwalke/flatlandia'
 
 call plug#end()
 
@@ -133,3 +142,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " Open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
+
+" Set the color scheme
+colorscheme flatlandia
