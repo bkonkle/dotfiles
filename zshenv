@@ -38,11 +38,11 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # -------
 
 export NODE_ENV=development
-path_append `yarn global bin`
 
 # Java
 # ----
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export CATALINA_HOME=/usr/local/opt/tomcat/libexec
-export ANDROID_HOME=$HOME/Library/Android/sdk
+if [[ `uname` == 'Darwin' ]]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+  export CATALINA_HOME=/usr/local/opt/tomcat/libexec
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+fi
