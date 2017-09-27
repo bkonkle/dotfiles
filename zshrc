@@ -49,7 +49,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa heroku-personal
 # Options
 setopt bang_hist # Enable textual history substitution, using !-syntax.
 
-export EDITOR='atom -w'
+export EDITOR='vim'
 
 # Online help for brew-installed zsh
 unalias run-help

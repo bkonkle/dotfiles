@@ -34,6 +34,7 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the left of the screen
+
 ""
 "" Searching
 ""
@@ -79,7 +80,7 @@ Plug 'pangloss/vim-javascript'
 
 " Colors
 
-Plug 'jordwalke/flatlandia'
+Plug 'baines/vim-colorscheme-thaumaturge'
 
 call plug#end()
 
@@ -144,4 +145,5 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 map <C-n> :NERDTreeToggle<CR>
 
 " Set the color scheme
-colorscheme flatlandia
+colorscheme thaumaturge
+
