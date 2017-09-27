@@ -48,7 +48,9 @@ tylerreckart/hyperzsh
 BUNDLES
 
 if $MAC; then
-  antigen bundles atom brew osx
+  antigen bundle atom
+  antigen bundle brew
+  antigen bundle osx
 fi
 
 antigen theme tylerreckart/hyperzsh hyperzsh
