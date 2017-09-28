@@ -148,5 +148,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 
 " Set the color scheme
-colorscheme thaumaturge
+silent! colorscheme thaumaturge
 
