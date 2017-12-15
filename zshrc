@@ -94,8 +94,11 @@ fi
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-# Docker Machine environment setup
-eval $(docker-machine env)
+DOCKER_MACHINE_ACTIVE=`docker-machine ls -t "1" | grep -i "default" | grep "Running"`
+if [ -n "$DOCKER_MACHINE_ACTIVE" ]; then
+  # Docker Machine environment setup
+  eval $(docker-machine env)
+fi
 
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
