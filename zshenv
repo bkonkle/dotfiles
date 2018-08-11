@@ -46,3 +46,9 @@ if [[ `uname` == 'Darwin' ]]; then
   export CATALINA_HOME=/usr/local/opt/tomcat/libexec
   export ANDROID_HOME=$HOME/Library/Android/sdk
 fi
+
+# Android
+# -------
+export ANDROID_SDK=/Users/brandon/Library/Android/sdk
+path_append /Users/brandon/Library/Android/sdk/platform-tools
+
