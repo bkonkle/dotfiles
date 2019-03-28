@@ -97,3 +97,5 @@ fi
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
