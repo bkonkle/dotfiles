@@ -104,3 +104,6 @@ fi
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh
 
+# Hashicorp Vault config
+export VAULT_ADDR=https://vault.communityfunded.io:8200
+export VAULT_SKIP_VERIFY=true
