@@ -70,7 +70,6 @@ fi
 
 alias grep='grep --color=auto'
 alias n='PATH=$(npm bin):$PATH'
-alias dockup='eval "$(docker-machine env)"'
 
 
 # Python
@@ -103,6 +102,9 @@ fi
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh
+
+# Yarn globals
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Hashicorp Vault config
 export VAULT_ADDR=https://vault.communityfunded.io:8200
