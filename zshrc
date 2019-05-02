@@ -68,6 +68,19 @@ fi
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+DOCKER_MACHINE_ACTIVE=`docker-machine ls -t "1" | grep -i "default" | grep "Running"`
+if [ -n "$DOCKER_MACHINE_ACTIVE" ]; then
+  # Docker Machine environment setup
+  eval $(docker-machine env)
+fi
+
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /usr/local/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /usr/local/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+[[ -f /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/brandon/code/pairboard-desktop/node_modules/tabtab/.completions/electron-forge.zsh
+
+# Yarn globals
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Hashicorp Vault config
+export VAULT_ADDR=https://vault.communityfunded.io:8200
+export VAULT_SKIP_VERIFY=true
