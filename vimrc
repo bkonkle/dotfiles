@@ -54,6 +54,13 @@ set nobackup
 set virtualedit=block     " Allow virtual editing in Visual block mode.
 set term=screen-256color
 
+" Enable Omnifunc autocompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+" Disable the netrw filebrowser in favor of NERDTree
+let loaded_netrwPlugin=1
+
 ""
 "" Plugins
 ""
@@ -67,19 +74,24 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'kien/ctrlp.vim'
+Plug 'wincent/command-t', {
+  \    'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+  \  }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'octref/RootIgnore'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'sbdchd/neoformat'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " Colors
 
-Plug 'jordwalke/flatlandia'
+Plug 'baines/vim-colorscheme-thaumaturge'
 
 call plug#end()
 
@@ -112,9 +124,6 @@ set wildignore+=*.swp,*~,._*
 "" Everything else
 ""
 
-" Add a shortcut for ctrlp
-let g:ctrlp_map = '<c-\>'
-
 " Enable jsdoc and Flow highlighting
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_flow = 1
@@ -122,17 +131,14 @@ let g:javascript_plugin_flow = 1
 " Tell neoformat to use the formatprg
 let g:neoformat_try_formatprg = 1
 
+" Tell NERDTree to respect the wildignore settings
+let NERDTreeRespectWildIgnore = 1
+
 " Set the JavaScript formatter
 autocmd FileType javascript set formatprg=npx\ prettier-eslint\ --stdin
 
-" Format on save
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-
 " Read in stdin
-autocmd StdinReadPre * let s:std_in=1
+autocmd StdinReadPre * let s:std_in = 1
 
 " Open NERDTree if started with no arguments
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -140,8 +146,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Open NERDTree if started with a directory
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+" Close NERDTree if it's the last buffer left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Open NERDTree with ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
 " Set the color scheme
-colorscheme flatlandia
+silent! colorscheme thaumaturge
