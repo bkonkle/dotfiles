@@ -33,17 +33,3 @@ export LANG=en_US.UTF-8
 
 # Homebrew perl path
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
-
-# Node.js
-# -------
-
-export NODE_ENV=development
-
-NPM_PACKAGES="${HOME}/.npm-packages"
-
-path_prepend $NPM_PACKAGES/bin
-
-# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
-unset MANPATH # delete if you already modified MANPATH elsewhere in your config
-export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
-
