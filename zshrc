@@ -53,6 +53,17 @@ export EDITOR='vim'
 
 alias grep='grep --color=auto'
 alias n='PATH=$(npm bin):$PATH'
+alias code='code-insiders'
+
+# Node.js
+# -------
+
+export NODE_ENV=development
+
+# Yarn globals
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+source /usr/share/nvm/init-nvm.sh
 
 # Python
 # ------
@@ -65,11 +76,11 @@ if which virtualenvwrapper.sh > /dev/null; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# OCaml
+# -----
+
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Yarn globals
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Hashicorp Vault config
 export VAULT_ADDR=https://vault.communityfunded.io:8200
@@ -77,10 +88,3 @@ export VAULT_SKIP_VERIFY=true
 
 # Less paging tweaks
 export LESS="-SRXF"
-
-# Node.js
-# -------
-
-export NODE_ENV=development
-
-source /usr/share/nvm/init-nvm.sh
