@@ -24,6 +24,10 @@ if [ -d "$HOME/bin" ] ; then
     path_prepend $HOME/bin
 fi
 
+if [ -d "$HOME/.local/bin" ] ; then
+    path_prepend $HOME/.local/bin
+fi
+
 # Locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
