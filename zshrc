@@ -58,14 +58,12 @@ alias code='code-insiders'
 # Node.js
 # -------
 
-export NODE_ENV=development
-
 # Yarn globals
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Python
 # ------
@@ -90,3 +88,8 @@ export VAULT_SKIP_VERIFY=true
 
 # Less paging tweaks
 export LESS="-SRXF"
+
+# Project-Specific
+# ----------------
+
+export NPM_TOKEN=
