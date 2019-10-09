@@ -55,15 +55,21 @@ alias grep='grep --color=auto'
 alias n='PATH=$(npm bin):$PATH'
 alias code='code-insiders'
 
+# Project-Specific
+# ----------------
+
+export NPM_TOKEN=1f11814d-9773-4b50-8e3e-a57717443310
+export GITHUB_NPM_AUTH_TOKEN=a81dcb6622c6d79c1529ee73f039ee3828d90f2f
+
 # Node.js
 # -------
 
 # Yarn globals
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Python
 # ------
@@ -88,8 +94,3 @@ export VAULT_SKIP_VERIFY=true
 
 # Less paging tweaks
 export LESS="-SRXF"
-
-# Project-Specific
-# ----------------
-
-export NPM_TOKEN=
