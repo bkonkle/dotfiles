@@ -58,8 +58,8 @@ alias code='code-insiders'
 # Project-Specific
 # ----------------
 
-export NPM_TOKEN=1f11814d-9773-4b50-8e3e-a57717443310
-export GITHUB_NPM_AUTH_TOKEN=a81dcb6622c6d79c1529ee73f039ee3828d90f2f
+export NPM_TOKEN=f55d39ac-85a3-43af-8fc9-c975e84d4646
+export GITHUB_NPM_AUTH_TOKEN=8bd7b713e7eb6118ee95a148274f6a073d31d22a
 
 # Node.js
 # -------
