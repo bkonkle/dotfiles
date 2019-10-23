@@ -8,7 +8,13 @@
 # programatically.
 
 # Antigen ZSH package manager
-source /usr/local/share/antigen/antigen.zsh
+if [[ -a /usr/local/share/antigen/antigen.zsh ]]; then
+  source /usr/local/share/antigen/antigen.zsh
+fi
+
+if [[ -a /usr/share/zsh-antigen/antigen.zsh ]]; then
+  source /usr/share/zsh-antigen/antigen.zsh
+fi
 
 # Oh My ZSH
 antigen use oh-my-zsh
