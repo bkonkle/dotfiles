@@ -7,14 +7,9 @@
 # up details that wouldn't be useful to software accessing the shell
 # programatically.
 
-# Antigen ZSH package manager
-if [[ -a /usr/local/share/antigen/antigen.zsh ]]; then
-  source /usr/local/share/antigen/antigen.zsh
-fi
-
-if [[ -a /usr/share/zsh-antigen/antigen.zsh ]]; then
-  source /usr/share/zsh-antigen/antigen.zsh
-fi
+# Antigen ZSH package manager (Mac and Linux locations)
+[ -s "/usr/local/share/antigen/antigen.zsh" ] && . "/usr/local/share/antigen/antigen.zsh"
+[ -s "/usr/share/zsh-antigen/antigen.zsh" ] && . "/usr/share/zsh-antigen/antigen.zsh"
 
 # Oh My ZSH
 antigen use oh-my-zsh
@@ -76,8 +71,10 @@ export GITHUB_NPM_AUTH_TOKEN=<%= @github_npm_auth_token %>
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm on Mac
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion on Mac
 
 # Python
 # ------
