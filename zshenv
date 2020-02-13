@@ -28,6 +28,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     path_prepend $HOME/.local/bin
 fi
 
+if [ -d "/home/linuxbrew" ] ; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
 # Locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
