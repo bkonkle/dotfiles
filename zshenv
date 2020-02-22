@@ -32,6 +32,8 @@ if [ -d "/home/linuxbrew" ] ; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
+export DOCKER_HOST=ssh://brandon@dev.knkl.us
+
 # Locales
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
