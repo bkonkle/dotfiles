@@ -18,15 +18,12 @@ antigen use oh-my-zsh
 antigen bundles <<BUNDLES
 command-not-found
 colored-man-pages
-gem
 git
 git-remote-branch
 github
-golang
 gpg-agent
 heroku
 npm
-redis-cli
 ssh-agent
 
 zsh-users/zsh-autosuggestions
@@ -93,11 +90,7 @@ fi
 # -----
 
 # OPAM configuration
-. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Hashicorp Vault config
-export VAULT_ADDR=https://vault.communityfunded.io:8200
-export VAULT_SKIP_VERIFY=true
+test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # Less paging tweaks
 export LESS="-SRXF"
