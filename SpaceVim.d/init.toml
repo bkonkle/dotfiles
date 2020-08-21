@@ -16,11 +16,13 @@
   enable_tabline_filetype_icon = true
   enable_statusline_mode = false
   filemanager = "nerdtree"
+  automatic_update = true
 
 [[layers]]
   name = "autocomplete"
-  auto_completion_return_key_behavior = "nil"
-  auto_completion_tab_key_behavior = "complete"
+  autocomplete_method = "coc"
+# auto_completion_return_key_behavior = "nil"
+# auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
   name = "shell"
@@ -32,3 +34,23 @@
 
 [[layers]]
   name = "lang#javascript"
+
+[[layers]]
+  name = "fzf"
+
+[[layers]]
+  name = "git"
+
+[[layers]]
+  name = "lsp"
+  filetypes = [
+    "javascript",
+    "typescript",
+    "sh"
+  ]
+
+[[layers]]
+  name = "sudo"
+
+[[layers]]
+  name = "tmux"
