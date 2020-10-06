@@ -58,12 +58,6 @@ alias whatismyip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 alias oni="$HOME/Applications/Onivim2.AppImage"
 
-# Project-Specific
-# ----------------
-
-export NPM_TOKEN=<%= @npm_token %>
-export GITHUB_NPM_AUTH_TOKEN=<%= @github_npm_auth_token %>
-
 # Node.js
 # -------
 export NODE_ENV=development
@@ -96,3 +90,8 @@ test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /de
 
 # Less paging tweaks
 export LESS="-SRXF"
+
+# Android
+# -------
+
+export JAVA_HOME=/snap/android-studio/current/android-studio/jre
