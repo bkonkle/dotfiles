@@ -43,3 +43,7 @@ export LANG=en_US.UTF-8
 
 # Homebrew perl path
 export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
+
+# Flatpak
+path_append /var/lib/flatpak/exports/share
+path_append $HOME/.local/share/flatpak/exports/share
