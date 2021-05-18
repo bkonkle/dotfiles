@@ -47,3 +47,9 @@ export PERL5LIB="$PERL5LIB:/usr/local/lib/perl5/site_perl"
 # Flatpak
 path_append /var/lib/flatpak/exports/share
 path_append $HOME/.local/share/flatpak/exports/share
+
+# Rust
+# ----
+
+# Cargo initialization
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
