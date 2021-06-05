@@ -53,3 +53,10 @@ path_append $HOME/.local/share/flatpak/exports/share
 
 # Cargo initialization
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# Terraform
+# ---------
+
+if [ -d "$HOME/.tfenv/bin" ] ; then
+    path_prepend $HOME/.tfenv/bin
+fi
