@@ -86,3 +86,10 @@ export LESS="-SRXF"
 # MOTD Message
 # ------------
 [ -s "/usr/bin/screenfetch" ] && screenfetch
+
+# AWS
+export AWS_VAULT_BACKEND=pass
+export AWS_VAULT_PASS_PREFIX=aws-vault
+
+## Chamber (secrets manager)
+export CHAMBER_KMS_KEY_ALIAS=alias/money/ssm
