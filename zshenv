@@ -20,7 +20,7 @@ path_prepend /usr/local/sbin
 path_prepend /usr/local/bin
 
 # Snapd bin
-if [-d "/snap/bin" ] ; then
+if [ -d "/snap/bin" ] ; then
     path_prepend /snap/bin
 fi
 
