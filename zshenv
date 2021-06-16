@@ -19,6 +19,11 @@ path_remove()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"
 path_prepend /usr/local/sbin
 path_prepend /usr/local/bin
 
+# Snapd bin
+if [-d "/snap/bin" ] ; then
+    path_prepend /snap/bin
+fi
+
 # Local bin
 if [ -d "$HOME/bin" ] ; then
     path_prepend $HOME/bin
@@ -32,7 +37,9 @@ if [ -d "/home/linuxbrew" ] ; then
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
 
-export DOCKER_HOST=ssh://brandon@dev.knkl.us
+if ! [ "$(hostname -s)" = "Goliath" ] ; then
+    export DOCKER_HOST=ssh://brandon@dev.knkl.us
+fi
 
 # Locales
 export LC_ALL=en_US.UTF-8
