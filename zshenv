@@ -74,5 +74,5 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 path_append $JAVA_HOME/bin
 
 export ANDROID_HOME=$HOME/Android
-path_append $ANDROID_HOME/cmdline-tools/tools/bin
+path_append $ANDROID_HOME/tools
 path_append $ANDROID_HOME/platform-tools
