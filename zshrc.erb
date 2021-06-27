@@ -92,4 +92,6 @@ export AWS_VAULT_BACKEND=pass
 export AWS_VAULT_PASS_PREFIX=aws-vault
 
 ## Chamber (secrets manager)
-export CHAMBER_KMS_KEY_ALIAS=alias/money/ssm
+export CHAMBER_KMS_KEY_ALIAS="<%= @chamberKmsKey %>"
+export CHAMBER_SECRET_BACKEND="s3-kms"
+export CHAMBER_S3_BUCKET="<%= @chamberS3Bucket %>"
